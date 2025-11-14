@@ -1,0 +1,135 @@
+<!--
+  Scalix Website - Ready for Netlify Deployment
+  Instructions:
+  1. Save this file as index.html
+  2. Create a folder called 'ScalixWebsite' and put this file inside.
+  3. Optional: Add an 'assets' folder for images or logos and update HTML paths if needed.
+  4. Sign up for Netlify (https://www.netlify.com/), then drag and drop the 'ScalixWebsite' folder.
+  5. Your site will be live on a temporary Netlify URL, and you can connect your custom domain.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scalix</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;600&family=Rajdhani:wght@300;600&family=Monoton&family=Audiowide&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Rajdhani', sans-serif; background: linear-gradient(135deg, #000000 0%, #0f0f0f 50%, #003300 100%); color: #d1d5db; position: relative; overflow-x: hidden; }
+    body::before { content: 'X'; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-20deg); font-size: 500px; color: rgba(57, 255, 20, 0.05); font-family: 'Monoton', cursive; pointer-events: none; z-index: 0; }
+    .neon-glow { text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14; position: relative; z-index: 1; }
+    @keyframes floatUp {0% { transform: translateY(0); } 50% { transform: translateY(-6px); } 100% { transform: translateY(0); }}
+    .float-anim { animation: floatUp 3s ease-in-out infinite; }
+    @keyframes fadeIn {0%{opacity:0;}100%{opacity:1;}}
+    .anim-fade {animation: fadeIn 2s ease-in-out forwards;}
+    @keyframes flicker {0%,100%{opacity:1;}50%{opacity:0.4;}}
+    .anim-flicker {animation: flicker 1.5s linear infinite;}
+    @keyframes slow-bounce {0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-8px);} 60% {transform: translateY(-4px);}}
+    .slow-bounce-anim {animation: slow-bounce 4s infinite;}
+    .service-card {opacity:0; transform:translateY(20px); transition: all 0.6s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease; z-index: 1; position: relative;}
+    .service-card.show {opacity:1; transform:translateY(0);}
+    .service-card:hover {transform: translateY(-8px); box-shadow: 0 0 20px #39ff14; background: linear-gradient(145deg, #003300, #001100);}
+    .green-title {color:#39ff14;}
+    .intro-section {opacity:0; animation: fadeIn 2s ease-in-out forwards; z-index: 1; position: relative;}
+    .logo-x-in-word { display: inline-block; color: #39ff14; text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14; transform: rotate(-15deg); font-weight: bold; font-family: 'Monoton', cursive; }
+    .scalix-text { font-family: 'Orbitron', sans-serif; }
+    .title-fade { font-family: 'Audiowide', cursive; }
+    .client-review {background: #111; padding: 20px; border-radius: 15px; text-align: center; transition: transform 0.3s; z-index: 1; position: relative;}
+    .client-review:hover {transform: scale(1.05);}
+    .client-review p {color: #d1d5db; font-size: 0.95rem;}
+    .client-review h4 {color: #39ff14; margin-top: 5px;}
+  </style>
+</head>
+<body>
+  <header class="bg-gray-900 shadow-neon p-6 flex flex-col items-center intro-section">
+    <h1 class="text-3xl font-bold scalix-text neon-glow float-anim">Scali<span class="logo-x-in-word">X</span></h1>
+    <nav class="space-x-6 mt-2">
+      <a href="#services" class="hover:text-green-400 anim-flicker">Services</a>
+      <a href="#about" class="hover:text-green-400 anim-flicker">About</a>
+      <a href="#contact" class="hover:text-green-400 anim-flicker">Contact</a>
+    </nav>
+  </header>
+
+  <main class="relative z-10">
+    <!-- Hero Section -->
+    <section class="text-center mt-16 px-6 intro-section">
+      <h2 class="text-4xl font-bold mb-4 neon-glow title-fade">Scale Your Brand with Confidence</h2>
+      <p class="text-lg text-gray-400 mb-8">We help entrepreneurs and businesses accelerate growth through proven brand-building and digital marketing strategies.</p>
+      <a href="#contact" class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-neon hover:bg-green-600">Book a Consultation</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="max-w-6xl mx-auto mt-24 px-6">
+      <h3 class="text-3xl font-bold text-center mb-10 neon-glow green-title slow-bounce-anim">Our Services</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-neon service-card">
+          <h4 class="text-xl font-semibold mb-2 green-title">Brand Strategy</h4>
+          <p class="text-gray-400">Positioning, messaging, and identity development that set your brand apart.</p>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-neon service-card">
+          <h4 class="text-xl font-semibold mb-2 green-title">Funnel Optimization</h4>
+          <p class="text-gray-400">Data-driven funnel building to maximize conversions at every stage.</p>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-neon service-card">
+          <h4 class="text-xl font-semibold mb-2 green-title">Paid Media Management</h4>
+          <p class="text-gray-400">Targeted ad campaigns designed to drive predictable revenue growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-6xl mx-auto mt-24 px-6">
+      <h3 class="text-3xl font-bold text-center mb-6 neon-glow slow-bounce-anim">About Us</h3>
+      <p class="text-center text-gray-400 max-w-3xl mx-auto">We're a freelance brand scaling agency dedicated to helping businesses grow sustainably. Our mission is to deliver high-impact strategies that create real, measurable results.</p>
+    </section>
+
+    <!-- Client Reviews -->
+    <section id="clients" class="max-w-6xl mx-auto mt-24 px-6">
+      <h3 class="text-3xl font-bold text-center mb-12 neon-glow green-title">Trusted by Satisfied Clients</h3>
+      <div class="grid md:grid-cols-4 gap-8 items-start">
+        <div class="client-review">
+          <p>"Scalix transformed our brand identity and helped us attract higher-paying clients! Truly professional."</p>
+          <h4>– John D.</h4>
+        </div>
+        <div class="client-review">
+          <p>"Their funnel optimization strategies doubled our conversions within weeks. Highly recommend!"</p>
+          <h4>– Anna M.</h4>
+        </div>
+        <div class="client-review">
+          <p>"Paid media campaigns run by Scalix were on point. We saw measurable ROI almost immediately."</p>
+          <h4>– Robert K.</h4>
+        </div>
+        <div class="client-review">
+          <p>"Amazing experience! Scalix helped us scale our online presence and brand visibility effortlessly."</p>
+          <h4>– Laura S.</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-6xl mx-auto mt-24 mb-24 px-6">
+      <h3 class="text-3xl font-bold text-center mb-6">Get in Touch</h3>
+      <form class="max-w-xl mx-auto bg-gray-900 p-8 rounded-2xl shadow-neon space-y-4" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Your Name" class="w-full border p-3 rounded" required />
+        <input type="email" name="email" placeholder="Email Address" class="w-full border p-3 rounded" required />
+        <textarea name="message" placeholder="How can we help you?" class="w-full border p-3 rounded h-32" required></textarea>
+        <button class="bg-green-500 text-white w-full py-3 rounded-lg hover:bg-green-600">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-black text-green-400 py-6 text-center">
+    <p>© 2025 Scalix</p>
+  </footer>
+
+  <script>
+    const serviceCards = document.querySelectorAll('.service-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); } });
+    }, { threshold: 0.3 });
+    serviceCards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>
